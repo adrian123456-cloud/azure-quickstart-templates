@@ -4,12 +4,12 @@ variables:
   location: 'eastus'
   templateFile: './main.bicep'
   sourceFolder: 'quickstarts/microsoft.web/webapp-linux-managed-mysql/'
-9.	If you do not already have an Azure Resource Manager service connection
+
 trigger:
 - none
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: $(vmImageName)
 
 name: Bicep deploy template
 
