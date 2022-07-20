@@ -1,0 +1,24 @@
+variables:
+  vmImageName: 'ubuntu-latest'
+  resourceGroupName: 'Bicep-l0204-RG' # Needs to already exist
+  location: 'eastus'
+  templateFile: './main.bicep'
+  sourceFolder: 'quickstarts/microsoft.web/webapp-linux-managed-mysql/'
+9.	If you do not already have an Azure Resource Manager service connection
+trigger:
+- none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+name: Bicep deploy template
+
+steps:
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'adrian123456-cloud1'
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      az deployment group create --resource-group $(resourceGroupName) --template-file $(sourceFolder)$(templateFile) \
+      --parameters administratorLogin=$(administratorLogin) administratorLoginPassword=$(administratorLoginPassword)
