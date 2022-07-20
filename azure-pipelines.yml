@@ -17,7 +17,7 @@ steps:
 - task: AzureResourceManagerTemplateDeployment@3
   inputs:
     deploymentScope: 'Resource Group'
-    azureResourceManagerConnection: 'adrian123456-cloud'
+    azureResourceManagerConnection: 'adriantay123456-cloud1'
     subscriptionId: '3fc69942-82b4-4504-a8ab-50f941d0bdd9'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'Bicep-l0204-RG'
