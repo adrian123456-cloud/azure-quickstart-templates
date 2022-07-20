@@ -18,10 +18,10 @@ steps:
   inputs:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: '<your-resource-manager-connection>'
-    subscriptionId: '<your-subscription-id>'
+    subscriptionId: '3fc69942-82b4-4504-a8ab-50f941d0bdd9'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'Bicep-l0204-RG'
-    location: '<your-closest-location>'
+    location: 'eastus'
     templateLocation: 'Linked artifact'
     csmFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.json'
     csmParametersFile: '$(Build.ArtifactStagingDirectory)/azuredeploy.parameters.json'
